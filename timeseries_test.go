@@ -15,8 +15,11 @@ func TestTimeseries(t *testing.T) {
 
 	observations := ts.Observations()
 
-	addedObservation := observations[1]
+	addedObservation := observations[0]
 	if addedObservation.At != obsTime {
 		t.Error("Added time doesnt match")
+	}
+	if addedObservation.Count != 3 {
+		t.Error("Count wasn't 3")
 	}
 }

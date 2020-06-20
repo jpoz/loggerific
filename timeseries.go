@@ -15,17 +15,18 @@ type Timeseries struct {
 
 func NewTimeseries() *Timeseries {
 	return &Timeseries{
-		observations: []*TimeseriesObservation{
-			&TimeseriesObservation{
-				At:    time.Now(),
-				Count: 0,
-			},
-		},
+		observations: []*TimeseriesObservation{},
 	}
 }
 
 func (ts *Timeseries) Add(at time.Time) {
-	lastObservation := ts.observations[len(ts.observations)-1]
+	obsLen := len(ts.observations)
+	if obsLen == 0 {
+		ts.observations = append(ts.observations, ts.newObservation(at))
+		return
+	}
+
+	lastObservation := ts.observations[obsLen-1]
 	if lastObservation.At.Before(at) {
 		ts.observations = append(ts.observations, ts.newObservation(at))
 		return
