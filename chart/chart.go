@@ -45,6 +45,12 @@ func (c *BarChart) drawData(screen tcell.Screen) {
 	_, y, width, height := c.GetInnerRect()
 	chartBottom := y + height - c.padding[2] - 1
 	paddingRight := c.padding[1]
+	// paddingTop := c.padding[0]
+	// paddingBottom := c.padding[2]
+
+	// min, max := c.minMaxHeight()
+	// dataRange := max - min
+	// boxRange := height - paddingTop - paddingBottom
 
 	for idx, dp := range c.dataPoints {
 		for i := 0; i < dp.Y; i++ {
@@ -78,4 +84,19 @@ func (c *BarChart) drawAxis(screen tcell.Screen) {
 	}
 
 	tview.Print(screen, "┼", x+paddingLeft, (y + height - paddingBottom), width, tview.AlignLeft, color)
+}
+
+func (c *BarChart) minMaxHeight() (int, int) {
+	var max int = c.dataPoints[0].Y
+	var min int = c.dataPoints[0].Y
+	for _, dp := range c.dataPoints {
+		if max < dp.Y {
+			max = dp.Y
+		}
+		if min > dp.Y {
+			min = dp.Y
+		}
+	}
+
+	return min, max
 }
