@@ -8,8 +8,8 @@
 [20/Jun/2020 10:55:52] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
 [20/Jun/2020 10:55:52] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
 [20/Jun/2020 10:55:52] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
-[INFO] [03d8e5489e8847ad9f9480b96309ffab] api.base.middleware.logging:66 method=GET path=/danaus/ status=200 user=fbd2d296-716e-4804-a26e-0d87c99aa136 db_queries=3
-[20/Jun/2020 10:55:53] "GET /danaus/ HTTP/1.1" 200 37577
+[INFO] [03d8e5489e8847ad9f9480b96309ffab] api.base.middleware.logging:66 method=GET path=/admin/ status=200 user=fbd2d296-716e-4804-a26e-0d87c99aa136 db_queries=3
+[20/Jun/2020 10:55:53] "GET /admin/ HTTP/1.1" 200 37577
 [20/Jun/2020 10:55:53] "GET /static/admin/css/base.css HTTP/1.1" 200 16378
 [20/Jun/2020 10:55:53] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
 [20/Jun/2020 10:55:53] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18052

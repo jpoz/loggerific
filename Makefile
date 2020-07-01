@@ -1,4 +1,6 @@
-.PHONY: run
+.PHONY: test_run
 
-run:
-	go run cmd/loggerific/main.go
+test_run:
+	go build -o logmaker cmd/logmarker/main.go
+	go build -o loggerific cmd/loggerific/main.go
+	./logmaker | ./loggerific
